@@ -5,7 +5,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<!-- Bootstrap CSS -->
-		<link rel="stylesheet" href="bootstrap-4.0.0/css/bootstrap.min.css" crossorigin="anonymous">
+		<link rel="stylesheet" href="../conllu-validate/bootstrap-5.3.1-dist/css/bootstrap.min.css" crossorigin="anonymous">
 		<title>PLURAL | TOOLS</title>
 	</head>
 	<body>
@@ -49,7 +49,6 @@
 						</div>
 					</div>
 				</div>
-				<hr>
 				<div class="col-sm-6">
 					<div class="card">
 						<h5 class="card-header">Morph Analyzer</h5>
@@ -97,6 +96,13 @@
 			</div>
 			<!-- Content here -->
 		</div>
+	</div>
+	<div class="d-flex justify-content-center col-md-12 col-lg-12 col-sm-12 fixed-bottom">
+		<nav class="navbar bg-body-tertiary d-flex justify-content-center">
+			<div class="container-fluid">
+			<p class="navbar-text mb-0">Designed and Devoloped by <a href="https://nagaraju291990.github.io/" target="_blank">Nagaraju Vuppala</a></p>
+			</div>
+		</nav>
 	</div>
 		<!-- Optional JavaScript -->
 		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
