@@ -77,7 +77,7 @@
 						<div class="card-body">
 							<h5 class="card-title"> For Parser 10 Column CONLL-U Validation</h5>
 							<p class="card-text">Tamil, Telugu</p>
-							<a href="https://plural.iiit.ac.in/" target="_blank" class="btn btn-primary">Plural</a>
+							<a href="https://plural.iiit.ac.in/conllu-validate" target="_blank" class="btn btn-primary">Plural</a>
 							<a href="http://10.2.6.188/conllu-validate" target="_blank" class="btn btn-primary">Local</a>
 						</div>
 					</div>
@@ -88,8 +88,19 @@
 						<div class="card-body">
 							<h5 class="card-title"> Each column annotation stats comparision</h5>
 							<p class="card-text">1 File or 2 File Upload</p>
-							<a href="https://plural.iiit.ac.in/" target="_blank" class="btn btn-primary">Plural</a>
+							<a href="https://plural.iiit.ac.in/annotate-stats" target="_blank" class="btn btn-primary">Plural</a>
 							<a href="http://10.2.6.188/annotate-stats" target="_blank" class="btn btn-primary">Local</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<div class="card">
+						<h5 class="card-header">SKA</h5>
+						<div class="card-body">
+							<h5 class="card-title"> Sanskrit-Telugu, Marathi, Tamil Translation</h5>
+							<p class="card-text">Marathi, Tamil, Telugu</p>
+							<!-- <a href="https://plural.iiit.ac.in/annotate-stats" target="_blank" class="btn btn-primary">Plural</a> -->
+							<a href="http://10.2.7.21/sata-scl/MT" target="_blank" class="btn btn-primary">Local</a>
 						</div>
 					</div>
 				</div>
