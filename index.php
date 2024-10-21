@@ -99,7 +99,7 @@
 						<div class="card-body">
 							<h5 class="card-title"> Sanskrit-Telugu, Marathi, Tamil Translation</h5>
 							<p class="card-text">Marathi, Tamil, Telugu</p>
-							<a href="https://plural.iiit.ac.in/scl/MT/" target="_blank" class="btn btn-primary">Plural</a>
+							<a href="https://plural.iiit.ac.in/sata-scl/MT/" target="_blank" class="btn btn-primary">Plural</a>
 							<a href="http://10.2.7.21/sata-scl/MT" target="_blank" class="btn btn-primary">Local</a>
 						</div>
 					</div>
