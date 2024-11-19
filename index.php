@@ -104,11 +104,33 @@
 						</div>
 					</div>
 				</div>
+				<div class="col-sm-6">
+					<div class="card">
+						<h5 class="card-header">Indic Divergence</h5>
+						<div class="card-body">
+							<h5 class="card-title"> Divergence Wheel</h5>
+							<p class="card-text">Indian Languages</p>
+							<a href="https://plural.iiit.ac.in/indic-divergence/4_prns.html" target="_blank" class="btn btn-primary">Indic Divergnece</a>
+							<a href="https://plural.iiit.ac.in/divergence-wheel/morf-diverg.html" target="_blank" class="btn btn-primary">Tamil-Telugu</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<div class="card">
+						<h5 class="card-header">Parallel Data Builder</h5>
+						<div class="card-body">
+							<h5 class="card-title">Parallel Data building</h5>
+							<p class="card-text">Translation, Divergence, Rating</p>
+							<a href="https://plural.iiit.ac.in/parallelData" target="_blank" class="btn btn-primary">Plural</a>
+							<a href="http://10.2.6.188/parallelData" target="_blank" class="btn btn-primary">Local</a>
+						</div>
+					</div>
+				</div>
 			</div>
 			<!-- Content here -->
 		</div>
 	</div>
-	<div class="d-flex justify-content-center col-md-12 col-lg-12 col-sm-12 fixed-bottom">
+	<div class="d-flex justify-content-center col-md-12 col-lg-12 col-sm-12">
 		<nav class="navbar bg-body-tertiary d-flex justify-content-center">
 			<div class="container-fluid">
 			<p class="navbar-text mb-0">Designed and Devoloped by <a href="https://nagaraju291990.github.io/" target="_blank">Nagaraju Vuppala</a></p>
