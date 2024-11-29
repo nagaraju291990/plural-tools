@@ -73,6 +73,17 @@
 				</div>
 				<div class="col-sm-6">
 					<div class="card">
+						<h5 class="card-header">Headline-Annotator</h5>
+						<div class="card-body">
+							<h5 class="card-title"> For Identifying Headline/keyword</h5>
+							<p class="card-text">Tamil, Telugu</p>
+							<a href="https://plural.iiit.ac.in/headline-annotator" target="_blank" class="btn btn-primary">Plural</a>
+							<a href="http://10.2.6.188/headline-annotator" target="_blank" class="btn btn-primary">Local</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<div class="card">
 						<h5 class="card-header">CONLL-U Validator</h5>
 						<div class="card-body">
 							<h5 class="card-title"> For Parser 10 Column CONLL-U Validation</h5>
