@@ -1,0 +1,564 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>PLURAL | TOOLS DASHBOARD</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+        crossorigin="anonymous"
+    >
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    >
+
+    <style>
+        body {
+            background-color: #f7f7f9;
+            color: #212529;
+        }
+
+        .card {
+            border-radius: 12px;
+            transition: box-shadow 0.2s ease, transform 0.2s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+            transform: translateY(-2px);
+        }
+
+        .filter-btn.active {
+            background-color: #0d6efd;
+            color: #fff;
+        }
+
+        .dashboard-header {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .theme-toggle-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+
+        /* Dark mode styles */
+        body.dark-mode {
+            background-color: #121212;
+            color: #f8f9fa;
+        }
+
+        body.dark-mode .card {
+            background-color: #1e1e1e;
+            color: #f8f9fa;
+            border-color: #2b2b2b;
+        }
+
+        body.dark-mode .card .card-text,
+        body.dark-mode .card .text-muted {
+            color: #cfcfcf !important;
+        }
+
+        body.dark-mode .filter-btn {
+            border-color: #3a3a3a;
+            color: #f8f9fa;
+        }
+
+        body.dark-mode .filter-btn.active {
+            background-color: #0d6efd;
+            border-color: #0d6efd;
+        }
+
+        body.dark-mode .form-control {
+            background-color: #1e1e1e;
+            color: #f8f9fa;
+            border-color: #3a3a3a;
+        }
+
+        body.dark-mode .form-control::placeholder {
+            color: #aaaaaa;
+        }
+
+        body.dark-mode .btn-outline-primary {
+            color: #f8f9fa;
+            border-color: #0d6efd;
+        }
+
+        body.dark-mode .btn-outline-primary:hover {
+            background-color: #0d6efd;
+            color: #fff;
+        }
+
+        body.dark-mode .badge.bg-primary {
+            background-color: #0d6efd !important;
+        }
+
+        body.dark-mode .badge.bg-secondary {
+            background-color: #6c757d !important;
+        }
+
+        body.dark-mode .badge.bg-success {
+            background-color: #198754 !important;
+        }
+
+        body.dark-mode .badge.bg-info {
+            background-color: #0dcaf0 !important;
+        }
+
+        body.dark-mode .badge.bg-warning {
+            background-color: #ffc107 !important;
+            color: #212529 !important;
+        }
+
+        body.dark-mode .badge.bg-danger {
+            background-color: #dc3545 !important;
+        }
+
+        body.dark-mode .badge.bg-dark {
+            background-color: #343a40 !important;
+        }
+    </style>
+</head>
+<body>
+<div class="container my-4">
+
+    <!-- Header + Theme Toggle -->
+    <div class="dashboard-header">
+        <div>
+            <h2 class="mb-0">PLURAL Tools Dashboard</h2>
+            <small class="text-muted">Unified view of all internal tools & UIs</small>
+        </div>
+        <button id="themeToggle" class="btn btn-outline-secondary theme-toggle-btn">
+            <i class="bi bi-moon-stars" id="themeIcon"></i>
+            <span id="themeText">Dark mode</span>
+        </button>
+    </div>
+
+    <!-- Search + Filters -->
+    <div class="d-flex flex-wrap gap-2 mb-4">
+        <input
+            id="searchBox"
+            class="form-control flex-grow-1"
+            type="text"
+            placeholder="Search tools by name, description, or language..."
+        >
+
+        <button class="btn btn-outline-primary filter-btn active" data-filter="all">All</button>
+        <button class="btn btn-outline-primary filter-btn" data-filter="mt">MT</button>
+        <button class="btn btn-outline-primary filter-btn" data-filter="anno">Annotation</button>
+        <button class="btn btn-outline-primary filter-btn" data-filter="data">Data</button>
+        <button class="btn btn-outline-primary filter-btn" data-filter="viewer">Viewer</button>
+        <button class="btn btn-outline-primary filter-btn" data-filter="validate">Validation</button>
+        <button class="btn btn-outline-primary filter-btn" data-filter="util">Utility</button>
+        <button class="btn btn-outline-primary filter-btn" data-filter="speech">Speech</button>
+        <button class="btn btn-outline-primary filter-btn" data-filter="admin">Admin</button>
+    </div>
+
+    <!-- Tool Cards Grid -->
+    <div class="row g-3" id="toolGrid">
+
+        <!-- Tamil Parser – Annotation -->
+        <div class="col-md-4 col-sm-6 tool-card" data-category="util">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <i class="bi bi-diagram-3 me-2"></i> Tamil Parser
+                    </h5>
+                    <p class="text-muted small mb-2">Tamil Parser in UD format</p>
+                    <p class="card-text small">POS, Morph, Dependency Relation, Graph View</p>
+                    <span class="badge bg-warning mb-3">Utility / Parsing</span>
+                    <div class="d-flex flex-wrap gap-2">
+                        <a href="https://plural.iiit.ac.in/tamilparser"
+                           target="_blank" class="btn btn-sm btn-outline-primary">Plural</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Transliteration – Utility -->
+        <div class="col-md-4 col-sm-6 tool-card" data-category="util">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <i class="bi bi-input-cursor-text me-2"></i> Transliteration
+                    </h5>
+                    <p class="text-muted small mb-2">Indian Languages Transliteration</p>
+                    <p class="card-text small">Tamil, Telugu, Hindi, Malayalam</p>
+                    <span class="badge bg-secondary mb-3">Utility</span>
+                    <div class="d-flex flex-wrap gap-2">
+                        <a href="https://plural.iiit.ac.in/IL-UTF2WX/"
+                           target="_blank" class="btn btn-sm btn-outline-primary">Plural</a>
+                        <a href="http://10.2.6.188/utfwx"
+                           target="_blank" class="btn btn-sm btn-outline-primary">Local</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CONLL-U Annotator – Annotation -->
+        <div class="col-md-4 col-sm-6 tool-card" data-category="anno">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <i class="bi bi-pencil-square me-2"></i> CONLL-U Annotator
+                    </h5>
+                    <p class="text-muted small mb-2">For building Parser</p>
+                    <p class="card-text small">Tamil, Telugu</p>
+                    <span class="badge bg-warning mb-3">Annotation</span>
+                    <div class="d-flex flex-wrap gap-2">
+                        <a href="https://plural.iiit.ac.in/conllu-annotator"
+                           target="_blank" class="btn btn-sm btn-outline-primary">Plural</a>
+                        <a href="http://10.2.6.188:300"
+                           target="_blank" class="btn btn-sm btn-outline-primary">Local</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Morph Analyzer – Annotation -->
+        <div class="col-md-4 col-sm-6 tool-card" data-category="util">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <i class="bi bi-braces me-2"></i> Morph Analyzer
+                    </h5>
+                    <p class="text-muted small mb-2">Indian Languages Morph</p>
+                    <p class="card-text small">Tamil, Telugu</p>
+                    <span class="badge bg-warning mb-3">Utility / Morph</span>
+                    <div class="d-flex flex-wrap gap-2">
+                        <a href="https://plural.iiit.ac.in/morphAnalyzer"
+                           target="_blank" class="btn btn-sm btn-outline-primary">Plural</a>
+                        <a href="http://10.2.6.188/morphAnalyzer"
+                           target="_blank" class="btn btn-sm btn-outline-primary">Local</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Discourse-Annotator – Annotation -->
+        <div class="col-md-4 col-sm-6 tool-card" data-category="anno">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <i class="bi bi-chat-left-text me-2"></i> Discourse-Annotator
+                    </h5>
+                    <p class="text-muted small mb-2">For building discourse data</p>
+                    <p class="card-text small">Tamil, Telugu</p>
+                    <span class="badge bg-warning mb-3">Annotation / Discourse</span>
+                    <div class="d-flex flex-wrap gap-2">
+                        <a href="https://plural.iiit.ac.in/discourse"
+                           target="_blank" class="btn btn-sm btn-outline-primary">Plural</a>
+                        <a href="http://10.2.6.188/discourse"
+                           target="_blank" class="btn btn-sm btn-outline-primary">Local</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Discourse-Connective Annotator – Annotation -->
+        <div class="col-md-4 col-sm-6 tool-card" data-category="anno">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <i class="bi bi-link-45deg me-2"></i> Discourse-Connective Annotator
+                    </h5>
+                    <p class="text-muted small mb-2">For building discourse connectives data</p>
+                    <p class="card-text small">Tamil, Telugu</p>
+                    <span class="badge bg-warning mb-3">Annotation / Connectives</span>
+                    <div class="d-flex flex-wrap gap-2">
+                        <a href="https://plural.iiit.ac.in/Connective-annotator/"
+                           target="_blank" class="btn btn-sm btn-outline-primary">Plural</a>
+                        <a href="http://10.2.6.188/Connective-annotator"
+                           target="_blank" class="btn btn-sm btn-outline-primary">Local</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Headline-Annotator – Annotation -->
+        <div class="col-md-4 col-sm-6 tool-card" data-category="anno">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <i class="bi bi-megaphone me-2"></i> Headline-Annotator
+                    </h5>
+                    <p class="text-muted small mb-2">For identifying headline / keyword</p>
+                    <p class="card-text small">Tamil, Telugu</p>
+                    <span class="badge bg-warning mb-3">Annotation</span>
+                    <div class="d-flex flex-wrap gap-2">
+                        <a href="https://plural.iiit.ac.in/headline-annotator"
+                           target="_blank" class="btn btn-sm btn-outline-primary">Plural</a>
+                        <a href="http://10.2.6.188/headline-annotator"
+                           target="_blank" class="btn btn-sm btn-outline-primary">Local</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CONLL-U Validator – Validation -->
+        <div class="col-md-4 col-sm-6 tool-card" data-category="validate">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <i class="bi bi-check2-square me-2"></i> CONLL-U Validator
+                    </h5>
+                    <p class="text-muted small mb-2">For Parser 10 Column CONLL-U Validation</p>
+                    <p class="card-text small">Tamil, Telugu</p>
+                    <span class="badge bg-danger mb-3">Validation</span>
+                    <div class="d-flex flex-wrap gap-2">
+                        <a href="https://plural.iiit.ac.in/conllu-validate"
+                           target="_blank" class="btn btn-sm btn-outline-primary">Plural</a>
+                        <a href="http://10.2.6.188/conllu-validate"
+                           target="_blank" class="btn btn-sm btn-outline-primary">Local</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Annotation Stats – Data -->
+        <div class="col-md-4 col-sm-6 tool-card" data-category="data">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <i class="bi bi-bar-chart-line me-2"></i> Annotation Stats
+                    </h5>
+                    <p class="text-muted small mb-2">Each column annotation stats comparison</p>
+                    <p class="card-text small">1 File or 2 File upload</p>
+                    <span class="badge bg-info mb-3">Data / Analytics</span>
+                    <div class="d-flex flex-wrap gap-2">
+                        <a href="https://plural.iiit.ac.in/annotate-stats"
+                           target="_blank" class="btn btn-sm btn-outline-primary">Plural</a>
+                        <a href="http://10.2.6.188/annotate-stats"
+                           target="_blank" class="btn btn-sm btn-outline-primary">Local</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SKA – MT -->
+        <div class="col-md-4 col-sm-6 tool-card" data-category="mt">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <i class="bi bi-translate me-2"></i> SKA
+                    </h5>
+                    <p class="text-muted small mb-2">Sanskrit–Telugu, Marathi, Tamil Translation</p>
+                    <p class="card-text small">Marathi, Tamil, Telugu</p>
+                    <span class="badge bg-primary mb-3">MT</span>
+                    <div class="d-flex flex-wrap gap-2">
+                        <a href="https://plural.iiit.ac.in/sata-scl/MT/"
+                           target="_blank" class="btn btn-sm btn-outline-primary">Plural</a>
+                        <a href="http://10.2.7.21/sata-scl/MT"
+                           target="_blank" class="btn btn-sm btn-outline-primary">Local</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Indic Divergence – Viewer/Data -->
+        <div class="col-md-4 col-sm-6 tool-card" data-category="viewer">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <i class="bi bi-diagram-2 me-2"></i> Indic Divergence
+                    </h5>
+                    <p class="text-muted small mb-2">Divergence Wheel</p>
+                    <p class="card-text small">Indian Languages</p>
+                    <span class="badge bg-success mb-3">Viewer / Divergence</span>
+                    <div class="d-flex flex-wrap gap-2">
+                        <a href="https://plural.iiit.ac.in/indic-divergence/4_prns.html"
+                           target="_blank" class="btn btn-sm btn-outline-primary">Indic Divergence</a>
+                        <a href="https://plural.iiit.ac.in/divergence-wheel/morf-diverg.html"
+                           target="_blank" class="btn btn-sm btn-outline-primary">Tamil–Telugu</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Parallel Data Builder – Data/MT -->
+        <div class="col-md-4 col-sm-6 tool-card" data-category="data">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <i class="bi bi-layers me-2"></i> Parallel Data Builder
+                    </h5>
+                    <p class="text-muted small mb-2">Parallel data building</p>
+                    <p class="card-text small">Translation, Divergence, Rating</p>
+                    <span class="badge bg-info mb-3">Data / MT Support</span>
+                    <div class="d-flex flex-wrap gap-2">
+                        <a href="https://plural.iiit.ac.in/parallelData"
+                           target="_blank" class="btn btn-sm btn-outline-primary">Plural</a>
+                        <a href="http://10.2.6.188/parallelData"
+                           target="_blank" class="btn btn-sm btn-outline-primary">Local</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- LingoDesk – Admin/Utility -->
+        <div class="col-md-4 col-sm-6 tool-card" data-category="admin">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <i class="bi bi-kanban me-2"></i> LingoDesk
+                    </h5>
+                    <p class="text-muted small mb-2">Task Management tool</p>
+                    <p class="card-text small">Translation, Rating, Nested span annotation</p>
+                    <span class="badge bg-dark mb-3">Admin / Task Management</span>
+                    <div class="d-flex flex-wrap gap-2">
+                        <a href="https://plural.iiit.ac.in/lingodesk"
+                           target="_blank" class="btn btn-sm btn-outline-primary">Plural</a>
+                        <a href="http://10.2.6.205/lingodesk"
+                           target="_blank" class="btn btn-sm btn-outline-primary">Local</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sandham – MT -->
+        <div class="col-md-4 col-sm-6 tool-card" data-category="mt">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <i class="bi bi-translate me-2"></i> Sandham
+                    </h5>
+                    <p class="text-muted small mb-2">Sanskrit–Tamil NMT</p>
+                    <p class="card-text small">Machine Translation</p>
+                    <span class="badge bg-primary mb-3">MT</span>
+                    <div class="d-flex flex-wrap gap-2">
+                        <a href="https://plural.iiit.ac.in/sandham"
+                           target="_blank" class="btn btn-sm btn-outline-primary">Plural</a>
+                        <a href="http://10.2.6.205/sandham"
+                           target="_blank" class="btn btn-sm btn-outline-primary">Local</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tamil Dialect – Viewer -->
+        <div class="col-md-4 col-sm-6 tool-card" data-category="viewer">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <i class="bi bi-chat-dots me-2"></i> Tamil Dialect
+                    </h5>
+                    <p class="text-muted small mb-2">UI for viewing conversations</p>
+                    <p class="card-text small">Dialect Data</p>
+                    <span class="badge bg-success mb-3">Speech/Viewer</span>
+                    <div class="d-flex flex-wrap gap-2">
+                        <a href="https://plural.iiit.ac.in/tamildialectdata/conversations"
+                           target="_blank" class="btn btn-sm btn-outline-primary">Plural</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Daily Speech Recording – Speech/Viewer -->
+        <div class="col-md-4 col-sm-6 tool-card" data-category="speech">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <i class="bi bi-mic me-2"></i> Daily Speech Recording
+                    </h5>
+                    <p class="text-muted small mb-2">UI for viewing conversations</p>
+                    <p class="card-text small">Machine Translation-related speech data</p>
+                    <span class="badge bg-success mb-3">Speech / Viewer</span>
+                    <div class="d-flex flex-wrap gap-2">
+                        <a href="https://plural.iiit.ac.in/Speech-recording-UI/"
+                           target="_blank" class="btn btn-sm btn-outline-primary">Plural</a>
+                        <a href="http://10.2.6.188/records"
+                           target="_blank" class="btn btn-sm btn-outline-primary">Local</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div> <!-- /toolGrid -->
+</div>
+
+<!-- Bootstrap JS (optional, for future use) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
+
+<!-- JS: Search, Filter, Theme Toggle -->
+<script>
+    const searchBox = document.getElementById("searchBox");
+    const cards = document.querySelectorAll(".tool-card");
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const themeToggle = document.getElementById("themeToggle");
+    const themeIcon = document.getElementById("themeIcon");
+    const themeText = document.getElementById("themeText");
+
+    let currentFilter = "all";
+
+    function updateCards() {
+        const query = searchBox.value.toLowerCase();
+
+        cards.forEach(card => {
+            const matchesFilter = (currentFilter === "all" ||
+                card.dataset.category === currentFilter);
+
+            const text = card.innerText.toLowerCase();
+            const matchesSearch = text.includes(query);
+
+            if (matchesFilter && matchesSearch) {
+                card.style.display = "";
+            } else {
+                card.style.display = "none";
+            }
+        });
+    }
+
+    // Search handler
+    searchBox.addEventListener("keyup", updateCards);
+
+    // Filter handler
+    filterButtons.forEach(btn => {
+        btn.addEventListener("click", () => {
+            filterButtons.forEach(b => b.classList.remove("active"));
+            btn.classList.add("active");
+            currentFilter = btn.dataset.filter;
+            updateCards();
+        });
+    });
+
+    // Theme toggle logic + localStorage
+    function setTheme(mode) {
+        if (mode === "dark") {
+            document.body.classList.add("dark-mode");
+            themeIcon.classList.remove("bi-moon-stars");
+            themeIcon.classList.add("bi-sun");
+            themeText.textContent = "Light mode";
+        } else {
+            document.body.classList.remove("dark-mode");
+            themeIcon.classList.remove("bi-sun");
+            themeIcon.classList.add("bi-moon-stars");
+            themeText.textContent = "Dark mode";
+        }
+        localStorage.setItem("theme", mode);
+    }
+
+    // Load saved theme
+    (function initTheme() {
+        const saved = localStorage.getItem("theme") || "light";
+        setTheme(saved);
+    })();
+
+    themeToggle.addEventListener("click", () => {
+        const isDark = document.body.classList.contains("dark-mode");
+        setTheme(isDark ? "light" : "dark");
+    });
+</script>
+</body>
+</html>
