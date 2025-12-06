@@ -73,6 +73,17 @@
 				</div>
 				<div class="col-sm-6">
 					<div class="card">
+						<h5 class="card-header">Discourse-Connective Annotator</h5>
+						<div class="card-body">
+							<h5 class="card-title"> For building discourse connectives data</h5>
+							<p class="card-text">Tamil, Telugu</p>
+							<a href="https://plural.iiit.ac.in/Connective-annotator/" target="_blank" class="btn btn-primary">Plural</a>
+							<a href="http://10.2.6.188/Connective-annotator" target="_blank" class="btn btn-primary">Local</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<div class="card">
 						<h5 class="card-header">Headline-Annotator</h5>
 						<div class="card-body">
 							<h5 class="card-title"> For Identifying Headline/keyword</h5>
@@ -134,6 +145,50 @@
 							<p class="card-text">Translation, Divergence, Rating</p>
 							<a href="https://plural.iiit.ac.in/parallelData" target="_blank" class="btn btn-primary">Plural</a>
 							<a href="http://10.2.6.188/parallelData" target="_blank" class="btn btn-primary">Local</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<div class="card">
+						<h5 class="card-header">LingoDesk</h5>
+						<div class="card-body">
+							<h5 class="card-title">Task Management tool</h5>
+							<p class="card-text">Translation, Rating, Nested span annotation</p>
+							<a href="https://plural.iiit.ac.in/lingodesk" target="_blank" class="btn btn-primary">Plural</a>
+							<a href="http://10.2.6.205/lingodesk" target="_blank" class="btn btn-primary">Local</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<div class="card">
+						<h5 class="card-header">Sandham</h5>
+						<div class="card-body">
+							<h5 class="card-title">Sanskrit-Tamil NMT</h5>
+							<p class="card-text">Machine Translation</p>
+							<a href="https://plural.iiit.ac.in/sandham" target="_blank" class="btn btn-primary">Plural</a>
+							<a href="http://10.2.6.205/sandham" target="_blank" class="btn btn-primary">Local</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<div class="card">
+						<h5 class="card-header">Tamil Dialect </h5>
+						<div class="card-body">
+							<h5 class="card-title">UI for viewing conversations</h5>
+							<p class="card-text">Machine Translation</p>
+							<a href="https://plural.iiit.ac.in/tamildialectdata/conversations" target="_blank" class="btn btn-primary">Plural</a>
+							<!-- <a href="http://10.2.6.205/sandam" target="_blank" class="btn btn-primary">Local</a> -->
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<div class="card">
+						<h5 class="card-header">Daily Speech Recording </h5>
+						<div class="card-body">
+							<h5 class="card-title">UI for viewing conversations</h5>
+							<p class="card-text">Machine Translation</p>
+							<a href="https://plural.iiit.ac.in/Speech-recording-UI/" target="_blank" class="btn btn-primary">Plural</a>
+							<a href="http://10.2.6.188/records" target="_blank" class="btn btn-primary">Local</a>
 						</div>
 					</div>
 				</div>
